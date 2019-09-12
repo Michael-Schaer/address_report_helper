@@ -26,7 +26,7 @@
   <br /><br />
   <form action="download.php" method="post">
     <input type="submit" value="Datei herunterladen" />
-    <input type="hidden" name="content" value="<?php echo $result; ?>"/>
+    <input type="hidden" name="content" value="<?php echo strip_tags($result); ?>"/>
   </form>
     
   </body>

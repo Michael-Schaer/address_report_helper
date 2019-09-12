@@ -11,7 +11,7 @@ class Log {
   
   function add($string) 
   {
-    $this->message .= $string."<br/>";
+    $this->message .= strip_tags($string)."<br/>";
   }
 }
 ?>
