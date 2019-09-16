@@ -17,12 +17,10 @@ class CsvDumper {
   {
     $this->log->add("erstelle CSV-Datei");
     
-    $csvStr = "";
+    $csvStr = [];
     foreach($this->persons as $person) 
     {
-      $person_url = $this->ini['person_url'].$person[0];
-      $csvStr .= $person[0].",".$person[1].",".$person[2].",".$person_url;
-      $csvStr .= ";";
+      array_push( $csvStr, $person);
     }
     
     return $csvStr;

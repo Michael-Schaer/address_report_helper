@@ -17,17 +17,40 @@
     $query_controller->query_groups();
     
     $csv_dumper = new CsvDumper($log, $query_controller->persons);
-    $result = $csv_dumper->create_csv_file();
+    $results = $csv_dumper->create_csv_file();
         
-    echo "<h2>Log</h2>";
-    echo $log->message;
+    echo "
+		<table>
+			<tr>
+				<th>
+					User-ID
+				</th>
+				<th>
+					Primäre Gruppe
+				</th>
+				<th>
+					Gruppen-Kontakt
+				</th>
+				<th>
+					Mail senden
+				</th>
+			</tr>
+			
+";
+
+    foreach ($results as $result){
+    	echo "<tr>";
+    	foreach ($result as $entrie){
+    		echo '<td>' . $entrie . '</td>';
+	    }
+	    echo '
+	        <td><form method="post" action="mail.php"><input type="hidden" name="mailaddress" value="'.$result[2].'" /><input type="submit" /></form></td>
+	    ';
+	    echo "</tr>";
+    }
+
+    echo "</table>";
   ?>
 
-  <br /><br />
-  <form action="download.php" method="post">
-    <input type="submit" value="Datei herunterladen" />
-    <input type="hidden" name="content" value="<?php echo strip_tags($result); ?>"/>
-  </form>
-    
   </body>
 </html>
