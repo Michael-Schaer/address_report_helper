@@ -1,19 +1,15 @@
 
 # Address Report Helper
 
-### Required information from the user (import)
-PersonID, GroupID as CSV
-
-### Information from MiData (JSON API)
-Abteilungsleitung E-Mail over Service API
-
 ### Requirements
-- [x] Upload CSV to the System (PersonID, GroupID)
-- [x] System queries every Group for an E-Mail-Address (Abteilungsleitung)
-- [x] System outputs a file with GroupID, E-Mail-Address and person (as link)
-- [ ] Group result by group (Abteilung) instead of person
-- [x] Test CSV-Output-Format with LibreOffice and Excel
-- [ ] Confirmation shows number of groups (found and not found)
+- [ ] OAuth implementation, Check roles
+- [ ] Upload CSV to the System (PersonID, GroupID)
+- [ ] Optional: Find rows by title name
+- [ ] System queries every Group for an E-Mail-Address (Abteilungsleitung)
+- [ ] Optional: Find Adressverwalter for each Person and use for sorting
+- [ ] Show summary with number of mails and number of people per receiver, not found items
+- [ ] E-Mail content
+- [ ] Send mails per Mailgun API
 
 ## Development
 
