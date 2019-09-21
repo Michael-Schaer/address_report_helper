@@ -10,6 +10,7 @@
 - [ ] Show summary with number of mails and number of people per receiver, not found items
 - [ ] E-Mail content
 - [ ] Send mails per Mailgun API
+- [ ] Optional: Template for mail or tel number
 
 ## Development
 
